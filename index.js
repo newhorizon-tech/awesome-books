@@ -36,8 +36,10 @@ const bookDisplay = document.querySelector('#book-display');
 const displayBooks = () => {
   bookDisplay.innerHTML = '';
   bookList.forEach((book) => {
-    const title = document.createElement('p');
-    const author = document.createElement('p');
+    const title = document.createElement('span');
+    const author = document.createElement('span');
+    const filler = document.createElement('span');
+    filler.textContent = ' by ';
 
     title.className = 'book-title';
     title.textContent = book.title;
