@@ -3,7 +3,7 @@ html {
 }
 
 h1 {
-  margin: 5px auto 20px auto;
+  margin: 5px auto 20px;
   width: 400px;
   text-align: center;
 }
@@ -12,12 +12,11 @@ nav {
   width: 95%;
   padding: 1%;
   border: 1px solid black;
-  margin: 5px auto 30px auto;
+  margin: 5px auto 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
 }
 
 #nav-brand {
@@ -43,10 +42,6 @@ button {
 }
 
 .book-element {
-  border: 1px solid black;
-}
-
-.book-element {
   background: white;
   margin: 0 auto;
   width: 400px;
@@ -66,10 +61,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.book-element:nth-child(even) {
-  background: white;
 }
 
 #addButton,
@@ -95,15 +86,4 @@ button {
 
 .display-off {
   display: none !important;
-}
-
-#addButton,
-.book-element:nth-child(even) button,
-.book-element:nth-child(odd) {
-  background: grey;
-  color: white;
-}
-
-.book-author {
-  padding-right: 5px;
 }
