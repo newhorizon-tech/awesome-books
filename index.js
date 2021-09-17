@@ -1,5 +1,28 @@
 let bookList = [];
 
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  addBook() {
+    const book = {
+      title: this.title,
+      author: this.author,
+    };
+    bookList.push(book);
+  }
+
+  removeBook() {
+    bookList = bookList.filter((book) => {
+      const titleMatch = book.title === this.title;
+      const authorMatch = book.author === this.author;
+      return !(titleMatch && authorMatch);
+    });
+  }
+}
+
 const saveData = (data) => {
   localStorage.setItem('bookList', JSON.stringify(data));
 };
@@ -13,8 +36,10 @@ const bookDisplay = document.querySelector('#book-display');
 const displayBooks = () => {
   bookDisplay.innerHTML = '';
   bookList.forEach((book) => {
-    const title = document.createElement('p');
-    const author = document.createElement('p');
+    const title = document.createElement('span');
+    const author = document.createElement('span');
+    const filler = document.createElement('span');
+    filler.textContent = ' by ';
 
     title.className = 'book-title';
     title.textContent = book.title;
@@ -26,7 +51,9 @@ const displayBooks = () => {
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Remove Book';
     deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
-    bookElement.append(title, author, deleteButton);
+    const textInfo = document.createElement('div');
+    textInfo.append(title, filler, author);
+    bookElement.append(textInfo, deleteButton);
 
     bookDisplay.append(bookElement);
   });
@@ -35,17 +62,15 @@ const displayBooks = () => {
 
 const deleteBook = (e) => {
   const bookElement = e.target.parentElement;
-  const title = bookElement.querySelector('.book-title').textContent;
-  const author = bookElement.querySelector('.book-author').textContent;
-  bookList = bookList.filter((book) => !(book.title === title && book.author === author));
+  const currentBook = new Book(bookElement.querySelector('.book-title').textContent,
+    bookElement.querySelector('.book-author').textContent);
+  currentBook.removeBook();
   displayBooks();
 };
 
 const bookInput = () => {
-  bookList.push({
-    title: titleIn.value,
-    author: authorIn.value,
-  });
+  const currentBook = new Book(titleIn.value, authorIn.value);
+  currentBook.addBook();
 
   titleIn.textContent = '';
   authorIn.textContent = '';
