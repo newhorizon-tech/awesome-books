@@ -11,22 +11,30 @@
 </head>
 
 <body>
-  <nav>Navigation Bar
-  <button class = "nav-btn" id="list">List</button>
-  <button class = "nav-btn" id="add-new">Add New</button>
-  <button class = "nav-btn" id="contact">Contact information</button>
+  <nav>
+    <div id="nav-brand"> Awesome Books </div>
+    <div>
+      <button class="nav-btn" id="list">List</button>
+      <button class="nav-btn" id="add-new">Add New</button>
+      <button class="nav-btn" id="contact">Contact information</button>
+    </div>
   </nav>
 
 
-  <h1>Awesome Books</h1>
-  <div id="book-display" class = "display-on"></div>
-  <div id="book-input" class = "display-off">
+  <h1>All Awesome Books</h1>
+  <div id="book-display" class="display-on"></div>
+  <div id="book-input" class="display-off">
     <input type="text" id="title-input" placeholder="Title">
     <input type="text" id="author-input" placeholder="Author">
     <button id="addButton">Add Book</button>
   </div>
 
-  <div id="contact-display"> Contact Information</div>
+  <div id="contact-display" class="display-off">
+    <p> 221B Baker St
+      221B Baker St, London NW1 6XE, UK</p>
+    <p>Call us on our number 0118 999 881 999 119 725 3
+    </p>
+  </div>
 </body>
 
 </html>

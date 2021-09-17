@@ -117,6 +117,7 @@ const contact = document.querySelector('#contact');
 const contactContent = document.querySelector('#contact-display');
 
 list.addEventListener('click', () => {
+  document.querySelector('h1').textContent = 'All Awesome Books';
   listContent.className = 'display-on';
   addContent.className = 'display-off';
   contactContent.className = 'display-off';

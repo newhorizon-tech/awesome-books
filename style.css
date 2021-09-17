@@ -3,9 +3,26 @@ html {
 }
 
 h1 {
-  margin: 0 auto;
+  margin: 5px auto 20px auto;
   width: 400px;
   text-align: center;
+}
+
+nav {
+  width: 95%;
+  padding: 1%;
+  border: 1px solid black;
+  margin: 5px auto 30px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#nav-brand {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 hr {
@@ -51,6 +68,11 @@ button {
   padding-right: 5px;
 }
 
+#contact-display {
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+}
 
 .display-on {
   display: block !important;
