@@ -2,7 +2,9 @@ html {
 
 }
 .book-element {
-  background: blue;
+  background: #F8F0E3;
   border: 1px solid black;
-  margin: 1% 25%;
+  margin: 1%;
+  width: 200px;
+  text-align: center;
 }
