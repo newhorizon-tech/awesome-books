@@ -1,14 +1,16 @@
-console.log("Javascript!");
-
 let bookList = [];
+
+const saveData = (data) => {
+  console.log("Data Save" + data)
+  localStorage.setItem("bookList", JSON.stringify(data));
+}
+
 
 const addBtn = document.querySelector("#addButton");
 const titleIn = document.querySelector("#title-input");
 const authorIn = document.querySelector("#author-input");
 
 const bookDisplay = document.querySelector("#book-display");
-
-console.log(bookDisplay);
 
 const deleteBook = (e) => {
   const bookElement = e.target.parentElement;
@@ -19,7 +21,6 @@ const deleteBook = (e) => {
   })
 
   displayBooks()
-  console.log(e.target.parentElement)
 }
 
 
@@ -44,11 +45,10 @@ const displayBooks = () => {
 
     bookDisplay.append(bookElement);
   })
-  console.log(bookList);
+  saveData(bookList);
 }
 
 const bookInput = () => {
-
   bookList.push({
     title: titleIn.value,
     author: authorIn.value
@@ -60,3 +60,15 @@ const bookInput = () => {
 }
 
 addBtn.addEventListener("click", bookInput)
+
+const loadData = () => {
+  let data = localStorage.getItem("bookList");
+  if (data != null) {
+    bookList = JSON.parse(data);
+    displayBooks()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    loadData();
+});
