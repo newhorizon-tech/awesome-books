@@ -54,17 +54,15 @@ const displayBooks = () => {
 
 const deleteBook = (e) => {
   const bookElement = e.target.parentElement;
-  const title = bookElement.querySelector('.book-title').textContent;
-  const author = bookElement.querySelector('.book-author').textContent;
-  bookList = bookList.filter((book) => !(book.title === title && book.author === author));
+  const currentBook = new Book(bookElement.querySelector('.book-title').textContent,
+    bookElement.querySelector('.book-author').textContent);
+  currentBook.removeBook();
   displayBooks();
 };
 
 const bookInput = () => {
-  bookList.push({
-    title: titleIn.value,
-    author: authorIn.value,
-  });
+  const currentBook = new Book(titleIn.value, authorIn.value);
+  currentBook.addBook();
 
   titleIn.textContent = '';
   authorIn.textContent = '';
