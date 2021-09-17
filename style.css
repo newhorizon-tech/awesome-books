@@ -1,3 +1,56 @@
 html {
+  background: #FAF9F6;
+}
+
+h1 {
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+}
+
+hr {
+  width: 400px;
+  color: black;
+}
+
+button {
   background: white;
+}
+
+#book-input {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid black;
+}
+
+.book-element:nth-child(even) {
+  background: white;
+}
+
+.book-element:nth-child(odd), .book-element:nth-child(even) button, #addButton {
+  background: grey;
+  color:white;
+}
+
+.book-element {
+  background: white;
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid black;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* span {
+  padding-left: 5px;
+  padding-right: 5px;
+} */
+
+.book-author {
+  padding-right: 5px;
 }
