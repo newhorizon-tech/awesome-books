@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -26,7 +28,7 @@ class BookCollection {
       return (titleMatch && authorMatch);
     });
 
-    return condition == undefined;
+    return condition === undefined;
   }
 
   addBook(book) {
@@ -43,13 +45,8 @@ class BookCollection {
     });
   }
 }
-
 // Instance of the class BookCollection
 const myBooks = new BookCollection();
-
-document.addEventListener('DOMContentLoaded', () => {
-  displayBooks();
-});
 
 const addBtn = document.querySelector('#addButton');
 const titleIn = document.querySelector('#title-input');
@@ -79,6 +76,10 @@ const displayBooks = () => {
   });
   myBooks.saveData();
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  displayBooks();
+});
 
 const deleteBook = (e) => {
   const bookElement = e.target.parentElement;
