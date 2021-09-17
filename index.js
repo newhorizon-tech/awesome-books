@@ -1,5 +1,19 @@
 let bookList = [];
 
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  addBook() {
+    const book = {
+      title: this.title,
+      author: this.author,
+    };
+    bookList.push(book);
+  }
+
 const saveData = (data) => {
   localStorage.setItem('bookList', JSON.stringify(data));
 };
