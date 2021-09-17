@@ -1,5 +1,5 @@
 html {
-  background: #FAF9F6;
+  background: #faf9f6;
 }
 
 h1 {
@@ -26,15 +26,6 @@ button {
   border: 1px solid black;
 }
 
-.book-element:nth-child(even) {
-  background: white;
-}
-
-.book-element:nth-child(odd), .book-element:nth-child(even) button, #addButton {
-  background: grey;
-  color:white;
-}
-
 .book-element {
   background: white;
   margin: 0 auto;
@@ -46,10 +37,16 @@ button {
   justify-content: space-between;
 }
 
-/* span {
-  padding-left: 5px;
-  padding-right: 5px;
-} */
+.book-element:nth-child(even) {
+  background: white;
+}
+
+#addButton,
+.book-element:nth-child(even) button,
+.book-element:nth-child(odd) {
+  background: grey;
+  color: white;
+}
 
 .book-author {
   padding-right: 5px;
