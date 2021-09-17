@@ -107,17 +107,31 @@ addBtn.addEventListener('click', bookInput);
 // Navigation
 
 const list = document.querySelector('#list');
+const listContent = bookDisplay;
+
+const addNew = document.querySelector('#add-new');
 const addContent = document.querySelector('#book-input');
 // const contactContent = bookDisplay;
 
-const addNew = document.querySelector('#add-new');
+const contact = document.querySelector('#contact');
+const contactContent = document.querySelector('#contact-display');
 
 list.addEventListener('click', () => {
-  bookDisplay.className = 'display-on';
+  listContent.className = 'display-on';
   addContent.className = 'display-off';
+  contactContent.className = 'display-off';
 });
 
 addNew.addEventListener('click', () => {
-  bookDisplay.className = 'display-off';
+  document.querySelector('h1').textContent = 'Add New Book';
+  listContent.className = 'display-off';
   addContent.className = 'display-on';
+  contactContent.className = 'display-off';
+});
+
+contact.addEventListener('click', () => {
+  document.querySelector('h1').textContent = 'Contact';
+  listContent.className = 'display-off';
+  addContent.className = 'display-off';
+  contactContent.className = 'display-on';
 });
