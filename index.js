@@ -20,7 +20,7 @@ const bookInput =  () => {
   titleIn.textContent = "";
   authorIn.textContent = "";
   const bookElement = document.createElement("div");
-  bookElement.class = "book-element";
+  bookElement.className = "book-element";
   bookElement.append(title, author)
 
   bookDisplay.append(bookElement);
