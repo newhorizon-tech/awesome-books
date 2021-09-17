@@ -14,6 +14,11 @@ class Book {
     bookList.push(book);
   }
 
+  removeBook() {
+    bookList = bookList.filter((book) => !(book.title === this.title && book.author === this.author));
+  }
+}
+
 const saveData = (data) => {
   localStorage.setItem('bookList', JSON.stringify(data));
 };
