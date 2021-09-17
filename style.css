@@ -51,3 +51,12 @@ button {
 .book-author {
   padding-right: 5px;
 }
+
+
+.display-on {
+  display: block !important;
+}
+
+.display-off {
+  display: none !important;
+}

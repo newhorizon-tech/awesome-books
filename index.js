@@ -103,3 +103,21 @@ const bookInput = () => {
 };
 
 addBtn.addEventListener('click', bookInput);
+
+// Navigation
+
+const list = document.querySelector('#list');
+const addContent = document.querySelector('#book-input');
+// const contactContent = bookDisplay;
+
+const addNew = document.querySelector('#add-new');
+
+list.addEventListener('click', () => {
+  bookDisplay.className = 'display-on';
+  addContent.className = 'display-off';
+});
+
+addNew.addEventListener('click', () => {
+  bookDisplay.className = 'display-off';
+  addContent.className = 'display-on';
+});
