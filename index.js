@@ -50,8 +50,10 @@ const displayBooks = () => {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Remove Book';
-      deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
-    bookElement.append(title, author, deleteButton);
+    deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
+    const textInfo = document.createElement('div');
+    textInfo.append(title, filler, author);
+    bookElement.append(textInfo, deleteButton);
 
     bookDisplay.append(bookElement);
   });
