@@ -15,7 +15,11 @@ class Book {
   }
 
   removeBook() {
-    bookList = bookList.filter((book) => !(book.title === this.title && book.author === this.author));
+    bookList = bookList.filter((book) => {
+      const titleMatch = book.title === this.title;
+      const authorMatch = book.author === this.author;
+      return !(titleMatch && authorMatch);
+    });
   }
 }
 
@@ -44,7 +48,7 @@ const displayBooks = () => {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Remove Book';
-    deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
+      deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
     bookElement.append(title, author, deleteButton);
 
     bookDisplay.append(bookElement);
