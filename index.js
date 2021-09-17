@@ -57,8 +57,10 @@ const bookDisplay = document.querySelector('#book-display');
 const displayBooks = () => {
   bookDisplay.innerHTML = '';
   myBooks.bookList.forEach((book) => {
-    const title = document.createElement('p');
-    const author = document.createElement('p');
+    const title = document.createElement('span');
+    const author = document.createElement('span');
+    const filler = document.createElement('span');
+    filler.textContent = ' by ';
 
     title.className = 'book-title';
     title.textContent = book.title;
@@ -69,8 +71,10 @@ const displayBooks = () => {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Remove Book';
-      deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
-    bookElement.append(title, author, deleteButton);
+    deleteButton.addEventListener('click', (e) => deleteBook(e)); // eslint-disable-line
+    const textInfo = document.createElement('div');
+    textInfo.append(title, filler, author);
+    bookElement.append(textInfo, deleteButton);
 
     bookDisplay.append(bookElement);
   });
