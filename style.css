@@ -43,6 +43,21 @@ button {
 }
 
 .book-element {
+  border: 1px solid black;
+}
+
+.book-element {
+  background: white;
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid black;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-element:nth-child(even) {
   background: white;
   margin: 0 auto;
   width: 400px;
@@ -80,4 +95,15 @@ button {
 
 .display-off {
   display: none !important;
+}
+
+#addButton,
+.book-element:nth-child(even) button,
+.book-element:nth-child(odd) {
+  background: grey;
+  color: white;
+}
+
+.book-author {
+  padding-right: 5px;
 }
