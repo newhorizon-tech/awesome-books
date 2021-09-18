@@ -10,7 +10,7 @@ Features
 
 ### Live Demo
 
-[Live Demo Link](https://newhorizon-tech.github.io/awesome-books/)
+[Live Demo Link](https://keen-bohr-eedfe1.netlify.app/)
 
 ## Built With
 

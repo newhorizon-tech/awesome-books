@@ -6,19 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Awesome Books</title>
+  <script src="luxon.js"></script>
   <script src="index.js" charset="utf-8" defer></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+  <nav>
+    <div id="nav-brand"> Awesome Books </div>
+    <div>
+      <button class="nav-btn" id="list">List</button>
+      <button class="nav-btn" id="add-new">Add New</button>
+      <button class="nav-btn" id="contact">Contact information</button>
+    </div>
+  </nav>
 
-  <h1>Awesome Books</h1>
-  <div id="book-display"></div>
-  <hr>
-  <div id="book-input">
+  <div id="date-display"></div>
+
+
+  <h1>All Awesome Books</h1>
+  <div id="book-display" class="display-on"></div>
+  <div id="book-input" class="display-off">
     <input type="text" id="title-input" placeholder="Title">
     <input type="text" id="author-input" placeholder="Author">
     <button id="addButton">Add Book</button>
+  </div>
+
+  <div id="contact-display" class="display-off">
+    <ul>
+      <li> Email us at books@mail.com</li>
+    <li> Come visit us at 221B Baker St, London NW1 6XE, UK</li>
+    <li>Call us on our number 0118 999 881 999 119 725 3  </li>
+  </ul>
   </div>
 </body>
 

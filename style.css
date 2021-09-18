@@ -3,9 +3,25 @@ html {
 }
 
 h1 {
-  margin: 0 auto;
+  margin: 5px auto 20px;
   width: 400px;
   text-align: center;
+}
+
+nav {
+  width: 95%;
+  padding: 1%;
+  border: 1px solid black;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-brand {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 hr {
@@ -23,7 +39,6 @@ button {
   text-align: center;
   margin: 0 auto;
   width: 400px;
-  border: 1px solid black;
 }
 
 .book-element {
@@ -39,6 +54,13 @@ button {
 
 .book-element:nth-child(even) {
   background: white;
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid black;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #addButton,
@@ -50,4 +72,28 @@ button {
 
 .book-author {
   padding-right: 5px;
+}
+
+#date-display {
+  text-align: end;
+  width: 95%;
+  padding: 1%;
+  margin: 0 0 20px;
+}
+
+#contact-display {
+  margin: 0 auto;
+  width: 500px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.display-on {
+  display: block !important;
+}
+
+.display-off {
+  display: none !important;
 }
