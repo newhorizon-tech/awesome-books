@@ -140,3 +140,4 @@ contact.addEventListener('click', () => {
   addContent.className = 'display-off';
   contactContent.className = 'display-on';
 });
+
