@@ -137,7 +137,7 @@ addNew.addEventListener('click', () => {
 });
 
 contact.addEventListener('click', () => {
-  document.querySelector('h1').textContent = 'Contact';
+  document.querySelector('h1').textContent = 'Contact us!';
   listContent.className = 'display-off';
   addContent.className = 'display-off';
   contactContent.className = 'display-on';
