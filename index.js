@@ -109,8 +109,6 @@ const bookInput = () => {
   displayBooks();
 };
 
-addBtn.addEventListener('click', bookInput);
-
 // Navigation
 
 const list = document.querySelector('#list');
@@ -122,12 +120,14 @@ const addContent = document.querySelector('#book-input');
 const contact = document.querySelector('#contact');
 const contactContent = document.querySelector('#contact-display');
 
-list.addEventListener('click', () => {
+const displayHome = () => {
   document.querySelector('h1').textContent = 'All Awesome Books';
   listContent.className = 'display-on';
   addContent.className = 'display-off';
   contactContent.className = 'display-off';
-});
+};
+
+list.addEventListener('click', displayHome);
 
 addNew.addEventListener('click', () => {
   document.querySelector('h1').textContent = 'Add New Book';
@@ -141,4 +141,11 @@ contact.addEventListener('click', () => {
   listContent.className = 'display-off';
   addContent.className = 'display-off';
   contactContent.className = 'display-on';
+});
+
+// Add Book Event Listener
+
+addBtn.addEventListener('click', () => {
+  displayHome();
+  bookInput();
 });
