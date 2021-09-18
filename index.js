@@ -1,31 +1,52 @@
-let bookList = [];
+/* eslint-disable max-classes-per-file */
 
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
+}
 
-  addBook() {
-    const book = {
-      title: this.title,
-      author: this.author,
-    };
-    bookList.push(book);
+class BookCollection {
+  constructor() {
+    const data = localStorage.getItem('bookList');
+    if (data != null) {
+      this.bookList = JSON.parse(data);
+    } else {
+      this.bookList = [];
+    }
   }
 
-  removeBook() {
-    bookList = bookList.filter((book) => {
-      const titleMatch = book.title === this.title;
-      const authorMatch = book.author === this.author;
+  saveData() {
+    localStorage.setItem('bookList', JSON.stringify(this.bookList));
+  }
+
+  avoidDuplicate(book) {
+    const condition = this.bookList.find((currentBook) => {
+      const titleMatch = currentBook.title === book.title;
+      const authorMatch = currentBook.author === book.author;
+      return (titleMatch && authorMatch);
+    });
+
+    return condition === undefined;
+  }
+
+  addBook(book) {
+    if (this.avoidDuplicate(book)) {
+      this.bookList.push(book);
+    }
+  }
+
+  removeBook(book) {
+    this.bookList = this.bookList.filter((currentBook) => {
+      const titleMatch = currentBook.title === book.title;
+      const authorMatch = currentBook.author === book.author;
       return !(titleMatch && authorMatch);
     });
   }
 }
-
-const saveData = (data) => {
-  localStorage.setItem('bookList', JSON.stringify(data));
-};
+// Instance of the class BookCollection
+const myBooks = new BookCollection();
 
 const addBtn = document.querySelector('#addButton');
 const titleIn = document.querySelector('#title-input');
@@ -35,7 +56,7 @@ const bookDisplay = document.querySelector('#book-display');
 
 const displayBooks = () => {
   bookDisplay.innerHTML = '';
-  bookList.forEach((book) => {
+  myBooks.bookList.forEach((book) => {
     const title = document.createElement('span');
     const author = document.createElement('span');
     const filler = document.createElement('span');
@@ -57,20 +78,24 @@ const displayBooks = () => {
 
     bookDisplay.append(bookElement);
   });
-  saveData(bookList);
+  myBooks.saveData();
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  displayBooks();
+});
 
 const deleteBook = (e) => {
   const bookElement = e.target.parentElement;
   const currentBook = new Book(bookElement.querySelector('.book-title').textContent,
     bookElement.querySelector('.book-author').textContent);
-  currentBook.removeBook();
+  myBooks.removeBook(currentBook);
   displayBooks();
 };
 
 const bookInput = () => {
   const currentBook = new Book(titleIn.value, authorIn.value);
-  currentBook.addBook();
+  myBooks.addBook(currentBook);
 
   titleIn.textContent = '';
   authorIn.textContent = '';
@@ -78,15 +103,3 @@ const bookInput = () => {
 };
 
 addBtn.addEventListener('click', bookInput);
-
-const loadData = () => {
-  const data = localStorage.getItem('bookList');
-  if (data != null) {
-    bookList = JSON.parse(data);
-    displayBooks();
-  }
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  loadData();
-});
