@@ -1,9 +1,11 @@
 /* eslint-disable max-classes-per-file */
+/* eslint-disable no-undef */
 
-/* eslint-disable-next-line */
-let time = luxon.DateTime.now.toLocaleString(luxon.DateTime.DATETIME_MED);
+document.addEventListener('DOMContentLoaded', async () => {
+  const currentTime = luxon.DateTime.local().toLocaleString(luxon.DateTime.DATETIME_MED);
 
-document.querySelector('#date-display').innerHTML = `${time}`;
+  document.querySelector('#date-display').innerHTML = `${currentTime}`;
+});
 
 class Book {
   constructor(title, author) {
@@ -140,4 +142,3 @@ contact.addEventListener('click', () => {
   addContent.className = 'display-off';
   contactContent.className = 'display-on';
 });
-
