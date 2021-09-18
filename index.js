@@ -1,5 +1,10 @@
 /* eslint-disable max-classes-per-file */
 
+/* eslint-disable-next-line */
+let time = luxon.DateTime.now.toLocaleString(luxon.DateTime.DATETIME_MED);
+
+document.querySelector('#date-display').innerHTML = `${time}`;
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -111,7 +116,6 @@ const listContent = bookDisplay;
 
 const addNew = document.querySelector('#add-new');
 const addContent = document.querySelector('#book-input');
-// const contactContent = bookDisplay;
 
 const contact = document.querySelector('#contact');
 const contactContent = document.querySelector('#contact-display');
