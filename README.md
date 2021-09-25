@@ -1,12 +1,13 @@
 # awesome-books
 
+![Screenshot](https://user-images.githubusercontent.com/62493636/134780441-a512ef9c-c2c3-46b6-bb0a-aa079baf9e80.png)
+
 Features
 
 - Display Books
 - Add Books
 - Remove Books
 - Store Books in LocalStorage
--  Plain Javascript
 
 ### Live Demo
 
